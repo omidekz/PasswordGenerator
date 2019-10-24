@@ -54,3 +54,11 @@ class PasswordGenerator:
 
     def __repr__(self):
         return self.get_password()
+
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()
