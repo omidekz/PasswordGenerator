@@ -32,15 +32,20 @@ class PasswordGenerator:
 
         self.__password = list()
         self._str_password = PasswordGenerator.BAD_MESSAGE
-
-    def generate(self):
-        if self._str_password != PasswordGenerator.BAD_MESSAGE:
-            return self._str_password
-        # shuffle the list for get best randoms
+    
+    @staticmethod
+    def shuffle_chars():
         shuffle(PasswordGenerator.smalls)
         shuffle(PasswordGenerator.capitals)
         shuffle(PasswordGenerator.characters)
         shuffle(PasswordGenerator.numbers)
+    
+
+    def generate(self):
+        if self._str_password != PasswordGenerator.BAD_MESSAGE:
+            return self._str_password
+
+        PasswordGenerator.shuffle_chars()
 
         # select random choices from the list by sample method
         self.__password.extend(sample(PasswordGenerator.smalls, self._small_length))
@@ -51,8 +56,7 @@ class PasswordGenerator:
         # shuffle the password list
         shuffle(self.__password)
         # cast to string
-        self._str_password = ''.join([p for p in self.__password])
-        return self._str_password
+        return ''.join([p for p in self.__password])
 
     def get_password(self):
         return self._str_password
