@@ -26,4 +26,4 @@ output: a password with len: 12
   * lowercase letters
   * uppercase letters
   * numbers
-  * symbols: ```python string.printable[62:-9]```
+  * symbols: ```string.printable[62:-9]```
