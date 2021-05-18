@@ -1,12 +1,10 @@
 from random import randint as ri, sample, shuffle
 
 class PasswordGenerator:
-    smalls = list(map(chr, range(ord('a'), ord('z') + 1)))
-    capitals = list(map(chr, range(ord('A'), ord('Z') + 1)))
-    characters = ['@', '#', '&', '!', '$', '%', '^', '*', '(', ')', '-', '?', '.', ',', ';', ':', '[', ']', '{', '}',
-                  '/',
-                  '\\', '`', '~', '+', '=']
-    numbers = list(map(str, range(0, 10)))
+    smalls = list(string.ascii_lowercase)
+    capitals = list(string.ascii_uppercase)
+    characters = list(string.printable[62:-9])
+    numbers = list(string.digits)
 
     MAX_LENGTH = 32
     MIN_LENGTH = 12
