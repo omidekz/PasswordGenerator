@@ -1,4 +1,5 @@
 from random import randint as ri, sample, shuffle
+import string
 
 class PasswordGenerator:
     smalls = list(string.ascii_lowercase)
